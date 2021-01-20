@@ -17,7 +17,7 @@ export class User {
     @Prop({required: true})
     password: String
 
-    @Prop({required: true})
+    @Prop({default: null})
     access_token: String
 
     @Prop()
