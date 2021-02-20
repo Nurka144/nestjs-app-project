@@ -11,10 +11,10 @@ export class Product{
     @Prop({required: true})
     description: String
 
-    @Prop({required: true, default: Date.now()})
+    @Prop({default: Date.now()})
     create_date: Date
 
-    @Prop({required: true, default: Date.now()})
+    @Prop({default: Date.now()})
     update_date: Date
 }
 
