@@ -13,7 +13,7 @@ export class ProductController {
     }
 
     @Post()
-    async saveProduct(@Body() product: ProductDto): Promise<ProductDto[]> {
+    async saveProduct(@Body() product: ProductDto): Promise<ProductDto> {
         return await this.ProductService.saveProduct(product);
     }
 }

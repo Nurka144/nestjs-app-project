@@ -6,10 +6,10 @@ export type ProductDocument = Product & Document;
 @Schema()
 export class Product{
     @Prop({required: true})
-    title: String
+    title: string
 
     @Prop({required: true})
-    description: String
+    description: string
 
     @Prop({default: Date.now()})
     create_date: Date

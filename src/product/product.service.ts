@@ -9,7 +9,7 @@ export class ProductService {
 
     constructor(@InjectModel(Product.name) private ProductModel: Model<ProductDocument>) {}
 
-    async saveProduct(productData: ProductDto): Promise<any> {
+    async saveProduct(productData: ProductDto): Promise<ProductDto> {
         const createProductData = new this.ProductModel({
             title: productData.title,
             description: productData.description
