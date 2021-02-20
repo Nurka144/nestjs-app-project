@@ -8,12 +8,12 @@ export class ProductController {
     constructor(private readonly ProductService: ProductService) {}
 
     @Get(':id')
-    async findOnt(@Param() id: number): Promise<any> {
-        return 
+    async findOnt(@Param('id') id: number): Promise<any> {
+        return await this.ProductService.findOne(id);
     }
 
     @Post()
-    async saveProduct(@Body() product: ProductDto): Promise<any> {
+    async saveProduct(@Body() product: ProductDto): Promise<ProductDto[]> {
         return await this.ProductService.saveProduct(product);
     }
 }

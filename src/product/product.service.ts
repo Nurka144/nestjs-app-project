@@ -17,8 +17,8 @@ export class ProductService {
         return createProductData.save();
     }
 
-    async findOne(productId: String): Promise<any> {
-        let findProduct = await this.ProductModel.find({_id: productId});
+    async findOne(productId: number): Promise<any> {
+        let findProduct = await this.ProductModel.find({"_id": productId});
         return findProduct;
     }
 }
