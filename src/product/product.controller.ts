@@ -8,7 +8,7 @@ export class ProductController {
     constructor(private readonly ProductService: ProductService) {}
 
     @Get(':id')
-    async findOnt(@Param('id') id: number): Promise<any> {
+    async findOnt(@Param('id') id: number): Promise<ProductDto[]> {
         return await this.ProductService.findOne(id);
     }
 
