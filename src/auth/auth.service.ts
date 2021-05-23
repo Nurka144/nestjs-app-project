@@ -52,6 +52,7 @@ export class AuthService {
         if(!comparePassword) {
             throw new HttpException('Не верные данные', HttpStatus.BAD_REQUEST);
         }
+        
         const signToken: string = await this.jwt.sign({id: findUser._id});
         const updateUser = await this.UserModel.updateOne({email: mailEnc}, {$set: {access_token: signToken}});
         if (updateUser.nModified == 1) {
